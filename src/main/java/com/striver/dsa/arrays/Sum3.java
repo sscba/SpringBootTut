@@ -31,6 +31,7 @@ public class Sum3 {
                     while (nums[j] == nums[j-1] && j < k) {
                         j++;
                     }
+                    while (j < k && nums[k] == nums[k + 1]) k--;
                 }
             }
         }
