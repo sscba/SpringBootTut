@@ -15,7 +15,7 @@ public class SubarraySumK {
         for(int i=0;i<n;i++){
             prefixSum += arr[i];
             count += previousOccuredSumCnt.getOrDefault(prefixSum -k,0);
-            previousOccuredSumCnt.put(prefixSum -k , previousOccuredSumCnt.getOrDefault(prefixSum -k,0)+1);
+            previousOccuredSumCnt.put(prefixSum , previousOccuredSumCnt.getOrDefault(prefixSum ,0)+1);
         }
         return count;
 
