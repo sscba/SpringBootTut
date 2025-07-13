@@ -1,7 +1,6 @@
 package com.striver.dsa.binarysearch;
 
 import java.lang.reflect.Array;
-import java.util.Collections;
 
 public class BookAllocation {
 
@@ -48,7 +47,7 @@ public class BookAllocation {
     }
 
     public static void main(String[] args) {
-        int books[] = {12,34,67,90};
+        int[] books = {12,34,67,90};
         int k = 2;
         int ans = new BookAllocation().solve(books,k);
         System.out.println(ans);
