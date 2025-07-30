@@ -29,3 +29,37 @@ public class BitwiseInteger {
         System.out.println( ans);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+//-----------------------
+public void rotate(int[] nums, int k) {
+    int n = nums.length;
+    k = k % n; // Handle cases where k > n
+
+    if (k == 0 || n <= 1) return; // No rotation needed
+
+    // Copy the last k elements
+    int[] temp = new int[k];
+    for (int i = 0; i < k; i++) {
+        temp[i] = nums[n - k + i];
+    }
+
+    // Shift the first n-k elements to the right
+    for (int i = n - 1; i >= k; i--) {
+        nums[i] = nums[i - k];
+    }
+
+    // Place the temp elements in the first k positions
+    for (int i = 0; i < k; i++) {
+        nums[i] = temp[i];
+    }
+}
