@@ -1,0 +1,24 @@
+class Solution {
+    public void rotate(int[] nums, int k) {
+        int n = nums.length;
+        k = k % n;
+
+        if (k == 0 || n <= 1) return;
+
+        int[] temp = new int[n-k];
+        
+        for(int i = 0 ; i < n-k; i++){
+            temp[i] = nums[i];
+        }
+        
+        //shift right from K element
+        for(int i=0 ; i < k; i++){
+           nums[i] = nums[i+(n-k)]  ;
+        }
+
+        //add temp elements
+        for(int i = 0;i < temp.length; i++){
+            nums[i +k] = temp[i];
+        }
+    }
+}
