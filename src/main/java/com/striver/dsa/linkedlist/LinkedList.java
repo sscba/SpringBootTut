@@ -197,6 +197,24 @@ public class LinkedList {
         return head;
     }
 
+    public static <E> Node<E> reverseLL(Node<E> head){
+        if(head == null || head.next == null) return head;
+
+        Node<E> prev = null;
+        Node<E> next = null;
+        Node<E> temp = head;
+
+        while(temp != null){
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+
+        head = prev;
+        return head;
+    }
+
     public static void main(String[] args) {
 //        int[] arr = {3};
         int[] arr = {3, 4, 75, 24, 21, 0, 45, 35};
@@ -218,7 +236,7 @@ public class LinkedList {
 //        ll = deleteFromValueLL(ll,0);
 //        traverseLL(ll);
 
-        System.out.println("Length of linkedList " + lengthLL(ll));
+//        System.out.println("Length of linkedList " + lengthLL(ll));
 
 //        int ele = 35;
 
@@ -226,9 +244,11 @@ public class LinkedList {
 
 
         //Insertion
-        Node<Integer> insertHead = insertAtValueLL(ll, 109, 75);
+//        Node<Integer> insertHead = insertAtValueLL(ll, 109, 75);
+
+        Node<Integer> reverseLL = reverseLL(ll);
         System.out.println("");
-        traverseLL(insertHead);
+        traverseLL(reverseLL);
 
     }
 
