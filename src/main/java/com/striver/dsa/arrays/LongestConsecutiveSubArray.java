@@ -25,6 +25,7 @@ public class LongestConsecutiveSubArray {
             }
 
             //checking right side on set or greater than numbers
+            num = nums[i];
             while(set.contains(++num)){
                 sequence++;
                 set.remove(num);

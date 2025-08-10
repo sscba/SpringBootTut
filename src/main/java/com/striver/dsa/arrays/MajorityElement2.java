@@ -43,9 +43,6 @@ public class MajorityElement2 {
 
         if(cnt2 >= min) res.add(ele2);
 
-
-
-
         return res;
     }
 

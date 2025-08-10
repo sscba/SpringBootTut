@@ -15,7 +15,29 @@ class Node<E> {
     }
 }
 
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode(int x) {
+        val = x;
+    }
+}
+
 public class LinkedList {
+
+    public static ListNode convertArrToListNode(int[] arr) {
+        ListNode head = new ListNode(arr[0]);
+        ListNode it = head;
+
+        for (int i = 1; i < arr.length; i++) {
+            ListNode temp = new ListNode(arr[i]);
+            it.next = temp;
+            it = temp;
+        }
+
+        return head;
+    }
 
     public static Node<Integer> convertArrToLL(int[] arr) {
         Node<Integer> head = new Node<>(arr[0]);
@@ -34,6 +56,14 @@ public class LinkedList {
         Node<E> temp = ll;
         while (temp != null) {
             System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void traverseLL(ListNode ll) {
+        ListNode temp = ll;
+        while (temp != null) {
+            System.out.print(temp.val + " ");
             temp = temp.next;
         }
     }
