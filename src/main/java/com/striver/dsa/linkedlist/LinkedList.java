@@ -79,6 +79,16 @@ public class LinkedList {
         return cnt;
     }
 
+    public static int lengthLL(ListNode ll) {
+        int cnt = 0;
+        ListNode temp = ll;
+        while (temp != null) {
+            temp = temp.next;
+            cnt++;
+        }
+        return cnt;
+    }
+
     public static <E> boolean searchInLL(Node<E> ll, E ele) {
         Node<E> temp = ll;
         while (temp != null) {

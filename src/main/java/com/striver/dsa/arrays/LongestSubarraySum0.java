@@ -10,7 +10,7 @@ public class LongestSubarraySum0 {
         int sum = 0;
         HashMap<Integer,Integer> prefixSumMap = new HashMap<>();
 
-        for(int i=0;i<n;i++){
+        for (int i = 0 ; i < n ; i++){
             sum += nums[i];
             if(prefixSumMap.containsKey(sum)){
                 max = Math.max(max, i- prefixSumMap.get(sum));
@@ -18,7 +18,7 @@ public class LongestSubarraySum0 {
                 prefixSumMap.put(sum,i);
             }
         }
-        return max;
+        return max ;
     }
 
     public static void main(String[] args) {
