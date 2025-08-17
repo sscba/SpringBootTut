@@ -62,8 +62,8 @@ public class Sort012LL {
             temp = temp.next;
         }
 
-        zero.next = oneHead.next;
-        one.next = twoHead.next;
+        zero.next = oneHead.next != null ? oneHead.next : twoHead.next ;
+        one.next = twoHead.next != null ? twoHead.next : null;
         two.next = null;
 
         return zeroHead.next;
@@ -71,7 +71,7 @@ public class Sort012LL {
     }
 
     public static void main(String[] args) {
-        int[] arr1 = {1,2,1,2,0,0,2,2,1,0,0,0};
+        int[] arr1 = {2,2,2,2};
 
         ListNode head = LinkedList.convertArrToListNode(arr1);
 
