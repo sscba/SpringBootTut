@@ -26,7 +26,7 @@ public class BitwiseInteger {
     public static void main(String[] args) {
         int[] arr = {4,2,2,6,4};
         int ans = new BitwiseInteger().solve(arr,6);
-        System.out.println( ans);
+        System.out.println(ans);
     }
 }
 
