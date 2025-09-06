@@ -11,14 +11,33 @@ public class PrintSubseqWithSumK {
         int sum = 0;
         int n = arr.length;
 
-//        get(arr,n,k,0,res,ans,sum);
+        get(arr,n,k,0,res,ans,sum);
 
-        int count = count(arr,n,k,0,sum);
-        System.out.println(count);
+//        int count = count(arr,n,k,0,sum);
+//        System.out.println(count);
         return res;
     }
 
-    public static boolean get(int[] arr, int n, int k, int i, List<List<Integer>> res, List<Integer> ans, int sum) {
+    public static void get(int[] arr, int n, int k, int i, List<List<Integer>> res, List<Integer> ans, int sum) {
+        //base case
+        if(i == n){
+            if(sum == k){
+                res.add(new ArrayList<>(ans));
+//                return true;
+            }
+            return ;
+        }
+
+        ans.add(arr[i]);
+        sum += arr[i];
+        get(arr,n,k,i+1,res,ans,sum);
+        ans.remove(ans.size()-1);
+        sum -= arr[i];
+        get(arr,n,k,i+1,res,ans,sum);
+//        return false;
+    }
+
+    public static boolean getOne(int[] arr, int n, int k, int i, List<List<Integer>> res, List<Integer> ans, int sum) {
         //base case
         if(i == n){
             if(sum == k){
@@ -30,10 +49,10 @@ public class PrintSubseqWithSumK {
 
         ans.add(arr[i]);
         sum += arr[i];
-        if(get(arr,n,k,i+1,res,ans,sum)) return true;
+        if(getOne(arr,n,k,i+1,res,ans,sum)) return true;
         ans.remove(ans.size()-1);
         sum -= arr[i];
-        if(get(arr,n,k,i+1,res,ans,sum)) return true;
+        if(getOne(arr,n,k,i+1,res,ans,sum)) return true;
         return false;
     }
 
