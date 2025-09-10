@@ -25,7 +25,6 @@ public class LongestPrefixStr {
             }
         }
         return ans.toString();
-
     }
 
     private boolean isCharacterSameForAllStrs(String[] strs,int i, char character, int strsLen) {
@@ -36,7 +35,7 @@ public class LongestPrefixStr {
     }
 
     public static void main(String[] args) {
-        String[] str = {"cir","car"};
+        String[] str = {"carrrrrrrrrrr","car"};
 
         String ans = new LongestPrefixStr().longestCommonPrefix(str);
         System.out.println(ans);
