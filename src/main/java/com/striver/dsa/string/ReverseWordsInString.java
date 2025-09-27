@@ -50,7 +50,7 @@ public class ReverseWordsInString {
     }
 
     public static void main(String[] args) {
-        String str = "a   man         is cooking";
+        String str = "a   man         is cooking                  ";
 
         String ans = new ReverseWordsInString().reverseWords(str);
         System.out.println(ans);
