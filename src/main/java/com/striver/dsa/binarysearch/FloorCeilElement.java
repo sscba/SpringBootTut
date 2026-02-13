@@ -56,7 +56,7 @@ public class FloorCeilElement {
 
     public static void main(String[] args) {
         int[] arr = {1,2,4,5,5,9,10};
-        int[] ans = new FloorCeilElement().solve(arr,10);
+        int[] ans = new FloorCeilElement().solve(arr,5);
 
         System.out.println("floor "+ ans[0] + " ceil "+ ans[1]);
 

@@ -45,7 +45,7 @@ public class LowerBound {
     public static void main(String[] args) {
         int[] arr = {1,2,2,2,3,3,4,5};
         LowerBound bound = new LowerBound();
-        int ans  =bound.lowerBound(arr,1);
+        int ans  =bound.lowerBound(arr,2);
         System.out.println(ans);
     }
 }
