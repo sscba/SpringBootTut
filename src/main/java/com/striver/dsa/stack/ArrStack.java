@@ -32,7 +32,7 @@ public class ArrStack implements Stack{
         if(isEmpty()){
             throw new IllegalArgumentException("Queue is empty!");
         }
-        int ele = stack[top--];
+        int ele = stack[--top];
         size--;
         return ele;
     }
@@ -42,7 +42,7 @@ public class ArrStack implements Stack{
         if(isEmpty()){
             throw new IllegalArgumentException("Queue is empty!");
         }
-        return stack[top];
+        return stack[top-1];
     }
 
     @Override
