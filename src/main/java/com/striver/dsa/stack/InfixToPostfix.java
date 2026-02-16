@@ -10,20 +10,21 @@ public class InfixToPostfix {
         Stack<Character> st = new Stack<>();
         StringBuilder ans = new StringBuilder();
         for(int i=0; i<s.length(); i++){
-            if((s.charAt(i) <='A' && s.charAt(i)>='Z')
-                    || (s.charAt(i) <='a' && s.charAt(i)>='z')
-            || (s.charAt(i) <='0' && s.charAt(i)>='9')){
+            if((s.charAt(i) >='A' && s.charAt(i)<='Z')
+                    || (s.charAt(i) >='a' && s.charAt(i)<='z')
+            || (s.charAt(i) >='0' && s.charAt(i)<='9')){
                 ans.append(s.charAt(i));
             } else if (s.charAt(i) == '(') {
                 st.push(s.charAt(i));
             }else if(s.charAt(i) == ')'){
-                while(!st.empty() && st.peek() != '('){
+                while(!st.isEmpty() && st.peek() != '('){
                     ans.append(st.peek());
                     st.pop();
                 }
-                st.pop();
+                if(!st.isEmpty())
+                    st.pop();
             }else{
-                while(!st.empty() && getPriorityMap(s.charAt(i)) <= getPriorityMap(st.peek())){
+                while(!st.isEmpty() && getPriorityMap(s.charAt(i)) <= getPriorityMap(st.peek())){
                     ans.append(st.peek());
                     st.pop();
                 }
@@ -31,7 +32,7 @@ public class InfixToPostfix {
             }
         }
 
-        while(!st.empty()){
+        while(!st.isEmpty()){
             ans.append(st.peek());
             st.pop();
         }
@@ -48,6 +49,8 @@ public class InfixToPostfix {
     }
 
     public static void main(String[] args) {
-
+        String s = "a+b*(c^d-e)^(f+g*h)-i";
+        String ans = new InfixToPostfix().convert(s);
+        System.out.println(ans);
     }
 }
