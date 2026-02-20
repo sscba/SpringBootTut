@@ -2,7 +2,7 @@ package com.striver.dsa.dp;
 
 import java.util.Arrays;
 
-public class HouseRobbery {
+public class HouseRobberII {
 
     private int nonAdjacentSum(int[] nums,int index, int[] dp){
         //base case
@@ -41,7 +41,7 @@ public class HouseRobbery {
 
     public static void main(String[] args) {
         int[] nums = {2,7,9,3,1};
-        int ans = new HouseRobbery().houseRobber(nums);
+        int ans = new HouseRobberII().houseRobber(nums);
         System.out.println(ans);
     }
 }
